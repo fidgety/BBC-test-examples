@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example of an accessible approach to displaying a pie chart</title>   
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/raphael/raphael-min.js"></script> 
+    <script type="text/javascript" src="js/raphael/g.raphael-min.js"></script> 
+    <script type="text/javascript" src="js/raphael/pie.js"></script>  
+    
+    <!-- class files go here -->   
+    <script type="text/javascript" src="js/datatable.js"></script>  
+    <script type="text/javascript" src="js/pie-chart.js"></script>  
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script>
+    $(function(){
+      var pie = new PieChart($('.pie-chart'));
+    });
+    </script>
+  </head>  
+  <body> 
+    <div class="header"><h1>BBC front-end examples</div>
+    
+    <ul class="navigation">
+      <li><a href="../pagination/pagination.htm">pagination</a></li>
+      <li class="selected">pie chart</li>
+    </ul>
+    
+    <h2>An approach to displaying an accessible pie chart</h2>
+    <p>My approach is to initially display the data in a datatable - the most accessible format. I have then used a JavaScript object to expose the data and properties of the table, and this in turn is consumed by a simple object wrapping some Raphael calls. The pie chart overlays the datatable in this example, but given time I would add the option to show either using tabs.</p>
+    <p>Although the code is written to be reusable it would need a custom pie chart generator which would gracefully handle different dimensions and quantities of values.</p>
+    <p>Ideally the SVG would be created server side as part of the content management, but this example assumes this isn't feasible.</p>
+    <br/> 
+    <table class="pie-chart">    
+      <caption>Top 10 countries receiving rice aid</caption>    
+      <tr>
+        <th>Ecuador</th>
+        <td>6%</td>
+      </tr>   
+      <tr>
+        <th>Burma</th>
+        <td>15%</td>
+      </tr>   
+      <tr>
+        <th>Nepal</th>
+        <td>14%</td>
+      </tr>   
+      <tr>
+        <th>Cambodia</th>
+        <td>12%</td>
+      </tr>   
+      <tr>
+        <th>Philippines</th>
+        <td>12%</td>
+      </tr>  
+      <tr>
+        <th>Sri Lanka</th>
+        <td>10%</td>
+      </tr>  
+      <tr>
+        <th>Bangladesh</th>
+        <td>9%</td>
+      </tr>  
+      <tr>
+        <th>Ivory Coast</th>
+        <td>8%</td>
+      </tr>  
+      <tr>
+        <th>India</th>
+        <td>8%</td>
+      </tr>  
+      <tr>
+        <th>Madagascar</th>
+        <td>6%</td>
+      </tr> 
+    </table> 
+    
+        
+  </body>
+</html>

@@ -1,0 +1,23 @@
+h1 { font-size: 2em; text-align: center; line-height: 4em; }
+
+.ramblings {}
+  .ramblings p { padding-bottom: 15px; } 
+  
+  .ramblings ul { list-style: circle; padding-bottom: 15px;}
+    .ramblings ul li { padding-bottom: 10px; }  
+  
+  .outer { width: 700px; margin:0 auto; }
+
+.pagination { font-size: 0.9em; margin: 0 auto; width: 380px;}
+  .pagination li{ list-style: none; float: left; display: block; height: 30px; background: #65145b; margin-right: 10px; line-height: 30px; text-align: center; cursor: pointer; color: white;}
+    .pagination li.numbered-link { width: 30px; }
+    .pagination li.previous-link { width: 100px; }
+    .pagination li.next-link { width: 100px; }
+    .pagination li:hover { background:#1ad7a7; }
+    .pagination li.inactive { background: #9e5495; cursor: default; }
+    
+    
+.description { height: 100px; width: 420px; background: #dddddd;  margin: 0 auto; width: 500px; margin-bottom: 10px; padding: 10px; }    
+  .description .prompt { padding-bottom: 10px; }
+  .description .headline {  }
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>A simple pagination example</title>
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  
+    <!-- class files go here -->
+  	<script type="text/javascript" src="js/pagination.js"></script>
+      
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="header"><h1>BBC front-end examples</div>
+    <ul class="navigation">
+      <li class="selected">pagination</li>
+      <li><a href="../pie-chart/pie-chart.htm">pie chart</a></li>
+    </ul>
+    
+    <h2>An example of simple pagination</h2>
+  
+    <p>below is an example of pagination following the guidelines given in the email.<p>
+    
+    <p>The example is flexible in how many 'items' it can handle. Time constraints mean I have not implemented the more advanced features outlined in the PDF such as ellipsis.</p>
+    <p>The JavaScript is TDD and I have not removed or refactored any tests to show my 'working out'.</p>
+    
+    <p>To make this more accessible - and for progressive enhancement - I would prefer to have the LI elements complete on page load. Once loaded the JS could make appropriate changes and add event handlers where needed. I would enhance accessibility further by adding the text of the description to each LI and hiding the text using CSS. I have chosen a UL not OL because, for speaking browsers, the number would be spoken twice.<p>
+  
+    <p>Finally, given time, I would have investigated the feasibility of implementing ARIA.</p>
+    <br/>
+    <div id="outer" class="info-browser">
+      <div class="description"></div>
+      <a href="#" class="previous">Previous</a>  
+      <ul>
+        <li><a href="#"><span class="number">1</span></a></li>
+      </ul>       
+      <a href="#" class="next">Next</a>
+      
+    </div> 
+  	
+  	<script>
+     var p = new Pagination($('.info-browser'));
+      
+  	</script>
+  </body>
+</html>

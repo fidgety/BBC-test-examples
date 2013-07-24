@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example of pagination</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/pagination.js"></script>
+  <script src="js/ticker.item.presentation.js"></script>
+</head>
+<body>
+
+
+
+<div class="outer">
+    <h1>Pagination exercise</h1>
+
+    <div class="ramblings">
+      <p>
+        As I did a similar test during my last BBC interviews I thought I'd try something a little different this time. Please bear in mind that I did set a strict 1.5 hours limit to my coding as advised by Harriet; as a result I would admit to being a little embarrassed about the result. Some notes I made as I went along....
+      </p>
+      
+      <ul>
+        <li>TDD without getters and setters; this in hindsight would lend itself to a different kind of 'object'; one with no external visibility.</li>
+        <li>The GEL rules suggested a BDD approach may be pertinent - for that reason I used Mocha in BDD mode with Chai for assertions; I haven't used these client side before so this was a perfect opportunity.</li>
+        <li>I wanted a solution which was reusable differently structured JSON, the only stipulation is it must be an array of objects. This meant clear separation between pagination and description responsibilities.</li>
+        <li>I would have liked to add a message bus to drive the inter component interaction. It would also have been useful for the selectItem method which is too big.</li>
+        <li>I would love to have spent another half hour or so refactoring both code and tests to aid readability, but given the choice I would rather have a functioning example to show.</li>
+        <li>Sorry about the look and feel - I should really have a template at hand for these things!</li>
+        <li>There is so much more I would have liked to have added - but still an enjoyable task - thank you.</li>
+      </ul>
+    </div>
+
+  <div id="description-goes-here" class="description"></div>
+  <div id="pagination-goes-here" class="pagination"></div>	
+</div>
+
+<script>
+  var html = document.getElementById('pagination-goes-here'),
+      json = {
+        entries: [
+          {
+            headline:'Operation under way to rescue 28 workers trapped at flooded coal mine in south-west China',
+            prompt: 'LATEST'
+          },{
+            headline:'A spider feared extinct in the UK has been photographed for the first time after new colony found',
+            prompt: 'LATEST'
+          },{
+            headline:'Many depictions of mental illness on TV are frightening and misleading, a report says',
+            prompt: 'LATEST'
+          },{
+            headline:'Watch video of Andy Murray in action at ATP World Tour Finals (UK users only)',
+            prompt: 'TENNIS'
+          },
+        ]
+      };
+  
+  paginationObject = new Pagination(html, json, function(json){
+    document.getElementById('description-goes-here').innerHTML = TickerItemPresentation(json).html();
+  });
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- with thanks to http://robdodson.me/blog/2012/05/27/testing-backbone-boilerplate-with-mocha-and-chai/ -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tests</title>
+  <link rel="stylesheet" href="mocha/mocha.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="mocha/mocha.js"></script>
+  <script src="chai/chai.js"></script>
+  <script>
+    mocha.setup('bdd');
+
+    function assert(expr, msg) {
+      if (!expr) throw new Error(msg || 'failed');
+    }
+  </script>                                          
+  <script src="../js/pagination.js"></script>     
+  <script src="../js/ticker.item.presentation.js"></script>
+  <script src="pagination.mocha.tests.js"></script>
+  <script src="ticker.item.presentation.mocha.tests.js"></script>
+  <script>
+    $(function() {
+      mocha.run();
+    })
+  </script>
+</head>
+<body>
+  <div id="mocha"></div>
+</body>
+</html>

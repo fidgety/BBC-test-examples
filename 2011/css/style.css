@@ -1,0 +1,27 @@
+* { padding: 0px; margin: 0px; font-family: Arial; }
+
+body { margin: 20px; }
+
+.header { width: 100%; height: 100px; background: #2b60cc; }
+ul.navigation { width: 100%; height: 40px; background: #777777; display: block; list-style: none; }
+    .navigation li { float: left; padding: 10px; color: white; }
+         .navigation li a { color: white; text-decoration: none; } 
+    .navigation li.selected { font-weight: bold;  }
+h1 { padding: 10px; color: white; }
+h2 { padding: 10px 0 0 10px; }    
+
+p { padding: 10px 0 0 10px; }
+    
+.description { width: 400px; height: 40px; border: 1px solid black; margin: 10px; padding: 10px; }
+.info-browser ul { list-style: none; padding: 0 0 0 30px; }
+  .info-browser li { float: left; border: 1px solid black; margin: 0 0 0 5px; width: 30px; text-align: center; line-height: 1.8em; cursor: pointer; }
+    .info-browser li a { text-decoration: none; color: black; font-weight: bold; }
+  .info-browser li:hover, .info-browser .next:hover, .info-browser .previous:hover { background-color: #2b60cc; }  
+    .info-browser li.selected,li.selected a { background: #cccccc; cursor: default; text-decoration: none; }
+.info-browser .previous, .next { border: 1px solid black; float: left; line-height: 1.9em; text-indent: -9999px; width: 30px; background: url('../images/next-prev.png') top no-repeat;  }
+  .info-browser .previous { margin: 0 0 0 10px; background-position: bottom; }
+  .info-browser .next { margin: 0 0 0 5px; }
+  
+.pie-chart { text-align: right; border-collapse: collapse; width: 370px; margin-left: 10px; }
+    .pie-chart caption { font-size: 1.2em; font-weight: bold; padding: 0 0 10px 0; }
+    .pie-chart td { text-align: left; padding: 2px 10px; }
